@@ -1,0 +1,33 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:700');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    line-height: 100vh;
+    font-size: 54px;
+    font-weight: 700;
+}
+body.shut-up {
+    background: #8940C4;
+    color: white;
+}
+body::after {content: "DON'T SHUT UP";}
+body.shut-up::after {content: 'SHUT UP';}
+</style>
+<body>
+<script>
+    setInterval(function () {
+        const hour = new Date().getHours();
+        if (hour === 13 || hour === 15){
+            document.body.classList.add('shut-up');
+        } else {
+            document.body.classList.remove('shut-up');
+        }
+    }, 1000);
+</script>
+</body>
+
